@@ -18,6 +18,7 @@ void inputData()
 
 void DFS(int n,int s,int sum)
 {
+    if(BlackJack_Found) return;
     if(n==3){
         if(sum==M){
             sol=M; BlackJack_Found=true;
@@ -29,7 +30,6 @@ void DFS(int n,int s,int sum)
 
     for(int i=s;i<N;i++){
         DFS(n+1,i+1,sum+Card[i]);
-        if(BlackJack_Found) return;
     }
 }
 
